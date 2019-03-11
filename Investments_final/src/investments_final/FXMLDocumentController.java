@@ -10,13 +10,13 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author User
+ * @author Hassan
  */
 public class FXMLDocumentController implements Initializable {
     
@@ -53,6 +53,17 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void calculate(ActionEvent event) {
+        if (current_age.getText().isEmpty() || monthly_contribution.getText().isEmpty() || retirement_age.getText().isEmpty()){
+            int response = JOptionPane.showConfirmDialog(
+        null,"Monthly contribution, current age, interest and retirement age should not be empty","Required Input",JOptionPane.DEFAULT_OPTION);
+            yearly_interest.setText("0");
+           total.setText("0");
+           yearly_investment.setText("0");
+           years_worked.setText("0");
+            
+        }
+        else {
+        try{
         
         int currentAge=Integer.parseInt(current_age.getText());
     int retirementAge=Integer.parseInt(retirement_age.getText());
@@ -103,6 +114,7 @@ public class FXMLDocumentController implements Initializable {
           }
       }*/
       else {
+         
           yearly_interest.setText("0");
            total.setText("0");
            yearly_investment.setText("0");
@@ -110,9 +122,16 @@ public class FXMLDocumentController implements Initializable {
            
       }
         }
+    
         while(working_years>x);
     System.out.println(total.getLength());
 
+    }
+        catch (NumberFormatException e){
+            int response = JOptionPane.showConfirmDialog(
+        null,"Only Integers are needed, please check your input ","Error",JOptionPane.DEFAULT_OPTION);              
+        }
+    }
     }
     
     @Override
