@@ -1,0 +1,15 @@
+#calcBtn{
+    -fx-background-color:grey;
+}
+#current_age{
+   -fx-background-color:#fcfcfc; 
+}
+#monthly_contribution{
+    -fx-background-color:#fcfcfc;
+}
+#retirement_age{
+    -fx-background-color:#fcfcfc;
+}
+#interest{
+    -fx-background-color:#fcfcfc;
+}

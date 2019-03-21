@@ -5,6 +5,7 @@
  */
 package investments_final;
 
+import investments_final.Investments_final;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -12,58 +13,81 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Hassan
  */
-public class FXMLDocumentController implements Initializable {
+public class FXMLDocumentController extends Investments_final implements Initializable {
     
     @FXML
-    private TextField current_age;
-
-    @FXML
-    private TextField monthly_contribution;
-
-    @FXML
-    private TextField year;
-
-    @FXML
-    private TextField retirement_age;
-
-    @FXML
-    private TextField interest;
-
-    @FXML
-    private TextField yearly_interest;
-
-    @FXML
-    private TextField total;
-
-    @FXML
-    private TextField yearly_investment;
-
-    @FXML
-    private Button buttonCalculate;
+    private AnchorPane anchor;
     
     @FXML
-    private TextField years_worked;
+    public TextField current_age;
+
+    @FXML
+    public TextField monthly_contribution;
+
+    @FXML
+    public TextField year;
+
+    @FXML
+    public TextField retirement_age;
+
+    @FXML
+    public TextField interest;
+
+    @FXML
+    public TextField yearly_interest;
+
+    @FXML
+    public TextField total;
+
+    @FXML
+    public TextField yearly_investment;
+
+    @FXML
+    public Button buttonCalculate;
+    
+    @FXML
+    public TextField years_worked;
 
 
     @FXML
     void calculate(ActionEvent event) {
-        if (current_age.getText().isEmpty() || monthly_contribution.getText().isEmpty() || retirement_age.getText().isEmpty()){
+        
+        current_age.setId("current_age");
+        monthly_contribution.setId("monthly_contribution");
+        year.setId("year");
+        retirement_age.setId("retirement_age");
+        interest.setId("interest");
+        yearly_interest.setId("yearly_interest");
+        total.setId("total");
+        yearly_investment.setId("yearly_investment");
+        buttonCalculate.setId("calcBtn");
+        years_worked.setId("years_worked");
+        anchor.getScene().getStylesheets().add("/stylesheets/Look.css");
+        
+        if (current_age.getText().isEmpty() || monthly_contribution.getText().isEmpty() || retirement_age.getText().isEmpty() || interest.getText().isEmpty() ){
             int response = JOptionPane.showConfirmDialog(
         null,"Monthly contribution, current age, interest and retirement age should not be empty","Required Input",JOptionPane.DEFAULT_OPTION);
             yearly_interest.setText("0");
            total.setText("0");
            yearly_investment.setText("0");
-           years_worked.setText("0");
+           years_worked.setText("0");       
+                    
+           anchor.getScene().getStylesheets().add("/stylesheets/Look.css");
+                 
             
         }
         else {
         try{
+            
+            anchor.getScene().getStylesheets().add("/stylesheets/Look.css");
         
         int currentAge=Integer.parseInt(current_age.getText());
     int retirementAge=Integer.parseInt(retirement_age.getText());

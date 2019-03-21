@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="457.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="investments_final.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="457.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="investments_final.FXMLDocumentController">
    <children>
       <Label layoutX="45.0" layoutY="45.0" prefHeight="34.0" prefWidth="86.0" text="Current Age" />
       <Label layoutX="401.0" layoutY="45.0" prefHeight="34.0" prefWidth="108.0" text="Retirement Age" />
