@@ -1,5 +1,6 @@
 #calcBtn{
-    -fx-background-color:grey;
+    -fx-background-color:#449d44;
+    -fx-border-color: #398439;
 }
 #current_age{
    -fx-background-color:#fcfcfc; 

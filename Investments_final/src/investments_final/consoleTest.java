@@ -4,7 +4,8 @@ package investments_final;
 public class consoleTest {
     public static void main(String [] args)
     {
-        int current_age=23;
+        
+      int current_age=23;
     int reitrement_age=60;
     int monthly_cont=5000;
     double interest=0.07;
@@ -38,4 +39,5 @@ public class consoleTest {
         while(x<10);*/
    
     }
+    
 }

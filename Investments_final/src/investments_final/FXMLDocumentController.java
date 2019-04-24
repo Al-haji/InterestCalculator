@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author Hassan
@@ -70,7 +71,8 @@ public class FXMLDocumentController extends Investments_final implements Initial
         yearly_investment.setId("yearly_investment");
         buttonCalculate.setId("calcBtn");
         years_worked.setId("years_worked");
-        anchor.getScene().getStylesheets().add("/stylesheets/Look.css");
+        buttonCalculate.setStyle("-fx-background-color:#449d44;");
+       anchor.getScene().getStylesheets().add("/stylesheets/normal.css");
         
         if (current_age.getText().isEmpty() || monthly_contribution.getText().isEmpty() || retirement_age.getText().isEmpty() || interest.getText().isEmpty() ){
             int response = JOptionPane.showConfirmDialog(
@@ -81,13 +83,14 @@ public class FXMLDocumentController extends Investments_final implements Initial
            years_worked.setText("0");       
                     
            anchor.getScene().getStylesheets().add("/stylesheets/Look.css");
+         
                  
             
         }
         else {
         try{
             
-            anchor.getScene().getStylesheets().add("/stylesheets/Look.css");
+            anchor.getScene().getStylesheets().add("/stylesheets/normal.css");
         
         int currentAge=Integer.parseInt(current_age.getText());
     int retirementAge=Integer.parseInt(retirement_age.getText());
