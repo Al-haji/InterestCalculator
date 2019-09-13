@@ -1,28 +1,29 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package investments_final;
 
-import investments_final.Investments_final;
+import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author Hassan
  */
-public class FXMLDocumentController extends Investments_final implements Initializable {
+public class FXMLDocumentController extends   Investments_final implements Initializable {
     
     @FXML
     private AnchorPane anchor;
@@ -56,6 +57,9 @@ public class FXMLDocumentController extends Investments_final implements Initial
     
     @FXML
     public TextField years_worked;
+    
+    private double dragOffsetX;
+   private double dragOffsetY;
 
 
     @FXML
@@ -161,9 +165,35 @@ public class FXMLDocumentController extends Investments_final implements Initial
     }
     }
     
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+       // Set mouse pressed and dragged even handlers for the scene
+      // Scene nw=(Scene) anchor.getScene();
+    /* anchor.getScene().setOnMousePressed(e -> handleMousePressed(e));
+     anchor.getScene().setOnMouseDragged(e -> handleMouseDragged(e));*/
+    
     }    
+/*
+    private void handleMousePressed(javafx.scene.input.MouseEvent e) {
+        Parent sroot = anchor.getScene().getRoot();
+        // Store the mouse x and y coordinates with respect to the
+         // stage in the reference variables to use them in the drag event
+         Stage stage = (Stage) anchor.getScene().getWindow();
+     this.dragOffsetX = e.getScreenX() - stage.getX();
+      this.dragOffsetY = e.getScreenY() - stage.getY();
+     
+    }
+
+    private void handleMouseDragged(javafx.scene.input.MouseEvent e) {
+        // Move the stage by the drag amount
+        Stage stage = (Stage) anchor.getScene().getWindow();
+      stage.setX(e.getScreenX() - this.dragOffsetX);
+      stage.setY(e.getScreenY() - this.dragOffsetY);
+      
+    }*/
     
 }
